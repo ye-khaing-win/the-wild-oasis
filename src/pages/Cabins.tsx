@@ -1,12 +1,18 @@
-import { useEffect } from "react";
-import { getCabins } from "../services/apiCabins";
+import Row from "../components/ui/Row";
+import Heading from "../components/ui/Heading";
+import CabinTable from "../features/cabins/CabinTable";
 
 const Cabins = () => {
-  useEffect(() => {
-    getCabins().then((data) => console.log(data));
-  }, []);
-
-  return <div>Cabins</div>;
+  return (
+    <>
+      <Row type="horizontal">
+        <Heading as="h2">All cabins</Heading>
+      </Row>
+      <Row>
+        <CabinTable />
+      </Row>
+    </>
+  );
 };
 
 export default Cabins;
